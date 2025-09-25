@@ -1,5 +1,3 @@
-Here’s the English translation of your text:
-
 **Inspiration**
 This project was inspired by and developed based on the knowledge from a tutorial video by *Murtaza's Workshop – Robotics and AI*:
 
