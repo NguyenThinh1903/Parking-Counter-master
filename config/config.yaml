@@ -1,0 +1,29 @@
+# config/config.yaml
+
+video_source: "data/video.mp4"
+slots_data_path: "data/detected_slots.json"
+
+# Tham số cho việc tự động phát hiện các ô đỗ xe (THUẬT TOÁN MỚI)
+detection_params:
+  # Canny Edge Detection - Giảm ngưỡng để phát hiện nhiều cạnh hơn
+  canny_low_thresh: 30
+  canny_high_thresh: 100
+  
+  # Hough Line Transform - Giảm ngưỡng để phát hiện nhiều đường thẳng hơn
+  hough_rho: 1
+  hough_theta_res: 1.6  # np.pi / 180 = 1.6
+  hough_threshold: 15    # Giảm để phát hiện nhiều đường thẳng hơn
+  hough_min_line_length: 15   # Giảm độ dài tối thiểu
+  hough_max_line_gap: 10      # Tăng khoảng cách tối đa để nối các đoạn
+  
+  # Kích thước mong muốn của một ô đỗ xe (đơn vị: pixel)
+  slot_width_min: 15
+  slot_width_max: 60
+  slot_height_min: 30
+  slot_height_max: 150
+
+# Tham số cho việc xác định trạng thái (trống/bận) của ô
+occupancy_params:
+  empty_threshold: 0.15   # Giữ nguyên giá trị đã tinh chỉnh
+  stability_threshold: 5
+  alpha: 0.6
